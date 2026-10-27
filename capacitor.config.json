@@ -1,0 +1,6 @@
+{
+  "appId": "app.aramforge.whatif",
+  "appName": "WHAT IF",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

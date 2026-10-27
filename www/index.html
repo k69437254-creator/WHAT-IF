@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050814"><title>WHAT IF — محاكي الاحتمالات</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="onboarding" id="onboarding" aria-label="مرحبًا بك في WHAT IF">
+  <div class="welcome-glow glow-one"></div><div class="welcome-glow glow-two"></div>
+  <div class="onboarding-content">
+    <div class="welcome-kicker"><span class="welcome-dot"></span> مساحة لاتخاذ قرارات أوضح</div>
+    <div class="welcome-symbol" aria-hidden="true"><span>?</span><i></i></div>
+    <p class="welcome-eyebrow">فكّر في البدائل، لا في التخمين</p>
+    <h1>كل قرار يفتح<br><span>احتمالًا جديدًا.</span></h1>
+    <p class="welcome-description">يساعدك WHAT IF على استكشاف مسارات مختلفة لقراراتك، وفهم الافتراضات والمكاسب والتكاليف والمخاطر قبل أن تختار خطوتك التالية.</p>
+    <div class="welcome-features"><div><span>01</span><b>ثلاثة مسارات بديلة</b><small>قارن أكثر من طريقة للتقدم</small></div><div><span>02</span><b>شفافية بلا أرقام مختلقة</b><small>افصل الافتراضات عن الحقائق</small></div><div><span>03</span><b>خطوات عملية</b><small>حوّل التفكير إلى تجربة قابلة للتنفيذ</small></div></div>
+    <button class="welcome-start" id="welcomeStart">ابدأ رحلتك <span>←</span></button>
+    <small class="welcome-note">أداة للتفكير المنظّم، وليست تنبؤًا بالمستقبل.</small>
+  </div>
+</section>
+<div class="layout">
+<aside class="sidebar">
+  <div class="logo">W<span>?</span></div>
+  <button class="nav active" data-target="home" title="الرئيسية">⌂</button>
+  <button class="nav" data-target="scenarios" title="السيناريوهات">▦</button>
+  <button class="nav" data-target="analytics" title="التحليلات">⌁</button>
+  <button class="nav" data-target="saved" title="المحفوظات">▣</button>
+  <button class="nav" data-target="settings" title="الإعدادات">⚙</button>
+  <div class="side-bottom"><button id="themeBtn" class="nav" title="تغيير الإضاءة">☼</button><div class="avatar">A</div><small>آرام</small></div>
+</aside>
+
+<main class="main" id="home">
+<header class="mobile-head"><div class="logo">W<span>?</span></div><strong>WHAT IF</strong><button id="mobileSaved">▤</button></header>
+<div class="dashboard-head">
+  <div><div class="greeting">مساحة التفكير الذكي <span class="live-dot"></span></div><h1>مرحبًا بك، آرام</h1><p>كل قرار يفتح طريقًا جديدًا. استكشف الاحتمالات بوضوح.</p></div>
+  <div class="clock-pill" id="clock">--:--</div>
+</div>
+
+<section class="grid hero-grid">
+  <article class="card welcome">
+    <div class="card-top"><span>لوحة محاكي الاحتمالات</span><span class="tag">WHAT IF / 01</span></div>
+    <h2>ماذا لو اخترت<br><span>طريقًا آخر؟</span></h2>
+    <p>حوّل الأسئلة إلى مسارات بديلة، وقارن المكاسب والتكاليف والمخاطر قبل اتخاذ القرار.</p>
+    <div class="last-activity-box"><small>آخر نشاط مسجّل</small><strong id="lastActivityText">لم يُسجّل أي نشاط بعد</strong></div>
+    <button class="inline-action" data-open="simulate">ابدأ محاكاة جديدة <span>↗</span></button>
+  </article>
+  <article class="card date-card">
+    <div class="muted" id="dateText">اليوم</div><div class="day" id="dayText">—</div>
+    <div class="date-orb">✦</div><h3>فكّر بوضوح</h3><p>السيناريوهات أدوات للتفكير، وليست تنبؤات مؤكدة.</p>
+    <div class="mini-stats"><div><span>المبدأ</span><strong>الشفافية</strong></div><div><span>الطريقة</span><strong>بلا تخمين</strong></div></div>
+  </article>
+</section>
+
+<section class="grid second-grid">
+  <article class="card productivity" id="analytics">
+    <div class="card-top"><h3>ملخص نشاطك الفعلي</h3><span class="muted">بيانات هذا الجهاز</span></div>
+    <div class="metric-row">
+      <div>
+        <div class="big-number" id="taskDoneCount">0</div>
+        <div class="muted">مهمة مكتملة</div>
+        <div class="tiny-stats"><span>السيناريوهات المحفوظة</span><b id="savedCount">0</b></div>
+        <div class="tiny-stats"><span>محاكاة آخر 7 أيام</span><b id="weekSimulationCount">0</b></div>
+      </div>
+      <div class="donut task-donut" id="taskDonut" style="--task-progress:0deg"><div><strong id="taskDoneRatio">—</strong><small>إنجاز المهام</small></div></div>
+    </div>
+    <div class="progress-caption"><span>المهام المكتملة من إجمالي المهام</span><b id="taskProgressText">لا توجد مهام بعد</b></div>
+    <div class="bar-track"><span id="progressBar"></span></div>
+    <div class="foot-note" id="activitySummary">ستظهر الإحصاءات بعد استخدام المحاكي وإضافة مهامك.</div>
+  </article>
+  <article class="card focus-card">
+    <div class="card-top"><h3>جلسة تركيز</h3><span class="muted">وقت التفكير</span></div>
+    <div class="timer-ring" id="timerRing"><div><strong id="timer">25:00</strong><small>تفكير عميق</small></div></div>
+    <button class="start-btn" id="timerBtn"><span>▶</span> ابدأ الجلسة</button>
+  </article>
+</section>
+
+<section class="grid third-grid">
+  <article class="card tasks-card" id="scenarios">
+    <div class="card-top"><h3>خطواتك القادمة</h3><button class="plus-btn" id="addTask">＋</button></div>
+    <div id="taskList" class="task-list"><div class="task-empty" id="taskEmpty">لا توجد مهام بعد. أضف أول خطوة تريد تنفيذها.</div></div>
+  </article>
+  <article class="card mood-card">
+    <div class="card-top"><h3>تفضيل المخاطرة</h3><span class="muted">إعدادك الحالي</span></div>
+    <div class="mood-title" id="riskLabel">متوازن</div><p id="riskDescription">تفضيلك محفوظ ويُستخدم عند إنشاء محاكاة جديدة.</p>
+    <div class="risk-meter"><div class="risk-track"><span id="riskMarker"></span></div><div class="risk-caption"><span>حذر</span><span>متوازن</span><span>جريء</span></div></div>
+    <label class="select-label" for="riskSelect">غيّر أسلوب المخاطرة</label><select id="riskSelect"><option>حذر</option><option selected>متوازن</option><option>جريء</option></select>
+    <div class="risk-caption"><span>مخاطرة أقل</span><span>مخاطرة أعلى</span></div>
+  </article>
+</section>
+
+<section class="grid bottom-grid">
+  <article class="card weekly-card">
+    <div class="card-top"><h3>نشاط آخر 7 أيام</h3><span class="muted">من سجل الاستخدام المحلي</span></div>
+    <div class="weekly-bars" id="weeklyActivity"><div class="empty-state">سيظهر النشاط هنا بعد استخدام التطبيق.</div></div>
+  </article>
+  <article class="card shortcuts-card">
+    <div class="card-top"><h3>اختصارات</h3><span class="muted">وصول سريع</span></div>
+    <div class="shortcuts">
+      <button data-open="simulate"><span>✳</span><small>محاكاة جديدة</small></button>
+      <button data-target="saved"><span>▣</span><small>المحفوظات</small></button>
+      <button data-open="compare"><span>⇄</span><small>مقارنة المسارات</small></button>
+      <button data-open="guide"><span>ⓘ</span><small>كيف يعمل؟</small></button>
+      <button data-open="tasks"><span>☷</span><small>قائمة المهام</small></button>
+      <button data-target="settings"><span>⚙</span><small>الإعدادات</small></button>
+    </div>
+  </article>
+</section>
+
+<section class="grid final-grid">
+  <article class="card upcoming-card" id="saved">
+    <div class="card-top"><h3>السيناريوهات المحفوظة</h3><button class="inline-link" id="viewAll">عرض الكل ↗</button></div>
+    <div id="savedList" class="saved-list"><div class="empty-state">لا توجد سيناريوهات محفوظة حتى الآن.</div></div>
+  </article>
+  <article class="card system-card" id="settings">
+    <div class="card-top"><h3>الإعدادات والتخصيص</h3><span class="muted">تجربتك كما تحب</span></div>
+    <p class="settings-intro">خصّص مظهر WHAT IF وسلوكه، وراجع ما يفعله التطبيق وكيف يتعامل مع بياناتك.</p>
+    <div class="settings-group">
+      <div class="settings-group-title">المظهر وإمكانية الوصول</div>
+      <label class="setting-row"><span><b>المظهر الداكن</b><small>ألوان داكنة مريحة في الإضاءة المنخفضة</small></span><input class="switch" id="settingDark" type="checkbox" checked></label>
+      <label class="setting-row"><span><b>تقليل الحركة</b><small>تقليل الانتقالات والحركات الزخرفية</small></span><input class="switch" id="settingMotion" type="checkbox"></label>
+      <label class="setting-row"><span><b>خط أكبر</b><small>زيادة حجم النص لتحسين القراءة</small></span><input class="switch" id="settingFont" type="checkbox"></label>
+      <label class="setting-row"><span><b>كثافة مريحة</b><small>مسافات واضحة بين البطاقات والمعلومات</small></span><input class="switch" id="settingComfort" type="checkbox" checked></label>
+      <label class="setting-row"><span><b>اتجاه عربي من اليمين لليسار</b><small>اعتماد العربية في تخطيط الواجهة</small></span><input class="switch" id="settingRTL" type="checkbox" checked></label>
+    </div>
+    <div class="settings-group">
+      <div class="settings-group-title">سلوك المحاكاة</div>
+      <label class="setting-row"><span><b>إظهار تنبيه الشفافية</b><small>التذكير بأن المسارات افتراضية وليست تنبؤًا</small></span><input class="switch" id="settingTransparency" type="checkbox" checked></label>
+      <label class="setting-row"><span><b>أسلوب المخاطرة الافتراضي</b><small>يُستخدم عند إنشاء محاكاة جديدة</small></span><select id="settingRisk" class="compact-select"><option>حذر</option><option selected>متوازن</option><option>جريء</option></select></label>
+      <label class="setting-row"><span><b>مدة جلسة التركيز</b><small>اختر مدة المؤقت بالدقائق</small></span><select id="settingTimer" class="compact-select"><option value="15">15 دقيقة</option><option value="25" selected>25 دقيقة</option><option value="45">45 دقيقة</option><option value="60">60 دقيقة</option></select></label>
+    </div>
+    <div class="settings-group">
+      <div class="settings-group-title">ملخص التطبيق والخصوصية</div>
+      <div class="about-row"><span class="about-icon">✦</span><div><b>WHAT IF — محاكي الاحتمالات</b><small>يساعدك على التفكير في بدائل القرار ومقارنة الافتراضات والمكاسب والتكاليف والمخاطر.</small></div></div>
+      <div class="system-line"><span>مصدر السيناريوهات</span><b>تحليل إرشادي محلي</b></div>
+      <div class="system-line"><span>البيانات الشخصية</span><b>لا يتطلب حسابًا</b></div>
+      <div class="system-line"><span>حفظ المحفوظات</span><b>على هذا الجهاز</b></div>
+      <div class="system-line"><span>السيناريوهات المحفوظة</span><b id="systemSavedCount">0</b></div>
+      <div class="system-line"><span>محاكاة مسجلة</span><b id="systemSimulationCount">0</b></div>
+      <div class="system-line"><span>جلسات التركيز المكتملة</span><b id="focusSessionsCount">0</b></div>
+      <div class="system-line"><span>آخر نشاط</span><b id="systemLastActivity">لا يوجد سجل بعد</b></div>
+      <div class="system-line"><span>حالة التخزين المحلي</span><b id="settingStorageStatus">جارٍ الفحص</b></div>
+      <div class="system-line"><span>عدد المهام</span><b id="settingsTaskCount">0</b></div>
+      <div class="system-line"><span>التوقعات الرقمية</span><b>لا تُختلق نسب نجاح</b></div>
+      <button class="danger-btn" id="clearSaved">حذف السيناريوهات المحفوظة</button>
+    </div>
+    <div class="developer-card">
+      <div class="developer-avatar">A</div><div class="developer-copy"><small>صُمّم وطُوّر بواسطة</small><strong>Aram Aoyal</strong><span>الفكرة تبدأ بسؤال، والتطوير يبدأ بخطوة.</span></div>
+      <a class="developer-link" href="https://t.me/ro_gy" target="_blank" rel="noopener" aria-label="التواصل مع المطور">↗</a>
+    </div>
+  </article>
+</section>
+
+<section class="card sim-panel hidden" id="simulate">
+  <div class="card-top"><h3>إنشاء محاكاة</h3><button class="inline-link" id="closeSim">إغلاق ×</button></div>
+  <label for="decision">ما القرار الذي تريد استكشافه؟</label><textarea id="decision" rows="3" placeholder="مثال: ماذا لو تعلمت البرمجة خلال سنة؟"></textarea>
+  <div class="form-row"><div><label for="horizon">الفترة الزمنية</label><select id="horizon"><option>شهر واحد</option><option selected>سنة واحدة</option><option>خمس سنوات</option></select></div><div><label for="priority">الأولوية</label><select id="priority"><option>الاستقرار وتقليل المخاطر</option><option selected>بناء مهارة ومشروع</option><option>الحرية والإبداع</option><option>توفير الوقت والمال</option></select></div></div>
+  <button class="main-btn" id="simulateBtn">إنشاء ثلاثة مسارات بديلة ↗</button>
+  <div id="results" class="results hidden"></div>
+</section>
+<section class="card sim-panel hidden" id="guide"><h3>كيف يعمل WHAT IF؟</h3><p>اكتب قرارًا واضحًا، ثم استكشف ثلاثة أساليب للتعامل معه: تجربة تدريجية، التزام منظّم، أو تغيير مكثّف. يوضح التطبيق الافتراضات والمكاسب والتكاليف والمخاطر، لكنه لا يتنبأ بالمستقبل ولا يخترع نسب نجاح.</p></section>
+<section class="card sim-panel hidden" id="tasks"><h3>قائمة المهام</h3><p>قسّم القرار إلى خطوات صغيرة. ضع علامة على كل خطوة عند إنجازها، وأضف مهامك من بطاقة «خطواتك القادمة».</p></section>
+</main>
+</div>
+<div class="toast" id="toast"></div><script src="app.js"></script>
+</body></html>
